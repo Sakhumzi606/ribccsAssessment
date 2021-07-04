@@ -21,19 +21,30 @@ namespace UnitTestProject3.TestSteps
 
         public void RunTests(string testName)
         {
+            this.EnsureNewBrowserInstance();
+
             if (testName.Equals("TrashDragAndDrop"))
             {
-                this.EnsureNewBrowserInstance();
                 this.dragAndDropImageInTrash();
+            }
+            else if (testName.Equals("CountryDropDownMenu"))
+            {
                 this.navigateAndSelectCountry();
+            }
+            else if (testName.Equals("FillSampleData"))
+            {
                 this.fillSamplePageTest();
             }
+
         }
 
         public bool dragAndDropImageInTrash()
         {
+            if (!SelDriver.hoverOverMenuElementAndClickSubMenuByCss(GlobalSQAStepsHelper.dragAndDrop))
+            { return false; }
             //validate Drag and drop page loaded successfully
-            SelDriver.waitForElementByCss(SQAObjects.dradAndDropPageHeaderCss());
+            if (!SelDriver.waitForElementByCss(SQAObjects.dradAndDropPageHeaderCss()))
+            { return false; }
             //validate photo manager tab is available
             SelDriver.waitForElementByCSSSelectorWithTimer(SQAObjects.photoManagerTabCss(), 100);
             //make sure photo manager tab is open
@@ -55,11 +66,10 @@ namespace UnitTestProject3.TestSteps
         }
 
         public bool navigateAndSelectCountry()
-        {
-
+        { 
             //navigate to country dropdown
-            if (!SelDriver.hoverOverMenuElementAndClickSubMenuByCss())
-            {return false;}
+            if (!SelDriver.hoverOverMenuElementAndClickSubMenuByCss(GlobalSQAStepsHelper.dropDownMenu))
+            { return false; }
             //validate DropDown Menu page loaded successfully
             if (!SelDriver.waitForElementByCss(SQAObjects.dradAndDropPageHeaderCss()))
             {return false;}
@@ -77,6 +87,8 @@ namespace UnitTestProject3.TestSteps
 
         public bool fillSamplePageTest()
         {
+            if (!SelDriver.hoverOverMenuElementAndClickSubMenuByCss(GlobalSQAStepsHelper.sampleData))
+            { return false; }
             //uploadImage
             //if (!SelDriver.UploadImageByCSS(SQAObjects.uploadImage()))
             //{ return false; }
@@ -84,17 +96,17 @@ namespace UnitTestProject3.TestSteps
             if (!SelDriver.enterTextByCss(SQAObjects.sampleNameCss(),"John"))
             { return false; }
             //tab to email
-            if (!SelDriver.tabCss(SQAObjects.sampleEmailCss()))
+            if (!SelDriver.tabCss(SQAObjects.sampleNameCss()))
             { return false; }
             //enter email
             if (!SelDriver.enterTextByCss(SQAObjects.sampleEmailCss(),"johnD@mail.com"))
             { return false; }
             //enter website
-            if (!SelDriver.enterTextByCss(SQAObjects.sampleEmailCss(), "www.johnD.com"))
+            if (!SelDriver.enterTextByCss(SQAObjects.sampleWebsiteCss(), "https://www.johnD.com"))
             { return false; }
             //select years experience
             var ram = random.Next(GlobalSQAStepsHelper.experience.Count);
-            if (!SelDriver.selectByTextFromDropDownListUsingCss(SQAObjects.sampleEmailCss(), GlobalSQAStepsHelper.experience[ram]))
+            if (!SelDriver.selectByTextFromDropDownListUsingCss(SQAObjects.sampleExperienceCss(), GlobalSQAStepsHelper.experience[ram]))
             { return false; }
             //randomly select expectise
             ram = random.Next(GlobalSQAStepsHelper.Expertise.Count);

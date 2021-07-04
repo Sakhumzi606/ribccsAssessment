@@ -10,37 +10,38 @@ namespace UnitTestProject3.TestSteps
     {
         internal static readonly List<string> country = new List<string>
         {
-                "Afghanistan",
-                "Åland Islands",
-                "Algeria",
-                "Albania",
-                "Andorra",
-                "American Samoa",
-                "Austria",
-                "Bangladesh",
-                "Belgium",
+                "Afghanistan","Åland Islands","Algeria","Albania",
+                "Andorra","American Samoa","Austria","Bangladesh","Belgium",
         };
 
         internal static readonly List<string> education = new List<string>
         {
-               "Graduate",
-               "Post Graduate",
-               "Other",
+               "Graduate","Post Graduate","Other",
         };
+
         internal static readonly List<string> Expertise = new List<string>
         {
-               "Functional Testing",
-               "Automation Testing",
-               "Manual Testing",
+               "Functional Testing","Automation Testing","Manual Testing",
         };
+
         internal static readonly List<string> experience = new List<string>
         {
-               "0-1",
-               "1-3",
-               "3-5",
-               "5-7",
-               "7-10",
-               "10+",
+               "0-1","1-3","3-5","5-7","7-10","10+",
+        };
+
+        internal static readonly List<string> dragAndDrop = new List<string>
+        {
+            "Tester’s Hub","Demo Testing Site","Drag And Drop"
+        };
+
+        internal static readonly List<string> dropDownMenu = new List<string>
+        {
+            "Tester’s Hub","Demo Testing Site","DropDown Menu"
+        };
+
+        internal static readonly List<string> sampleData = new List<string>
+        {
+            "Tester’s Hub","Sample Page Test"
         };
     }
 }

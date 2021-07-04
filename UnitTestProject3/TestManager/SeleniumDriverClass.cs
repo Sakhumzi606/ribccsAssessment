@@ -224,51 +224,24 @@ namespace UnitTestProject3.TestManager
             return true;
         }
 
-        public bool hoverOverMenuElementAndClickSubMenuByCss()
+        public bool hoverOverMenuElementAndClickSubMenuByCss(List<string> list)
         {
             try
             {
-                this.waitForElementByXpathWithTimer("//div[@id='menu']//li/a[contains(text(),\"Tester’s Hub\")]", 50);
-
                 Actions action = new Actions(Driver);
-                IWebElement menulevelhover = Driver.FindElement(By.XPath("//div[@id='menu']//li/a[contains(text(),\"Tester’s Hub\")]"));
-                action.MoveToElement(menulevelhover);
-
-                menulevelhover = Driver.FindElement(By.XPath("//li//span[contains(text(),'Demo Testing Site')]"));
-                action.MoveToElement(menulevelhover);
-
-                menulevelhover = Driver.FindElement(By.XPath("//li//span[contains(text(),'DropDown Menu')]"));
-                action.MoveToElement(menulevelhover);
-
-                Thread.Sleep(1000);
-
-                action.Click();
-                action.Perform();
-
-            }
-            catch(Exception)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        public bool hoverOverMenuElementAndClickSubMenuByCss1(List<string> list)
-        {
-            try
-            {
-                this.waitForElementByXpathWithTimer("//div[@id='menu']//li/a[contains(text(),\"Tester’s Hub\")]", 50);
-
-                Actions action = new Actions(Driver);
-                IWebElement menulevelhover = Driver.FindElement(By.XPath("//div[@id='menu']//li/a[contains(text(),\"Tester’s Hub\")]"));
-                action.MoveToElement(menulevelhover);
-
-                menulevelhover = Driver.FindElement(By.XPath("//li//span[contains(text(),'Demo Testing Site')]"));
-                action.MoveToElement(menulevelhover);
-
-                menulevelhover = Driver.FindElement(By.XPath("//li//span[contains(text(),'DropDown Menu')]"));
-                action.MoveToElement(menulevelhover);
+                for (int i = 0; i < list.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        IWebElement menulevelhover = Driver.FindElement(By.XPath("//div[@id='menu']//li/a[contains(text(),\"" + list[i] + "\")]"));
+                        action.MoveToElement(menulevelhover);
+                    }
+                    else
+                    {
+                        IWebElement menulevelhover = Driver.FindElement(By.XPath("//li//span[contains(text(),\'" + list[i] + "\')]"));
+                        action.MoveToElement(menulevelhover);
+                    }
+                }
 
                 Thread.Sleep(1000);
 
@@ -335,7 +308,7 @@ namespace UnitTestProject3.TestManager
             {
                 Thread.Sleep(500);
                 waitForElementByCss(elementCss);
-                Driver.FindElement(By.Id(elementCss)).SendKeys(Keys.Tab);
+                Driver.FindElement(By.CssSelector(elementCss)).SendKeys(Keys.Tab);
             }
             catch (Exception)
             {

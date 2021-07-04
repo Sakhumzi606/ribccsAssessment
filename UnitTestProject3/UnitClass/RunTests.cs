@@ -12,8 +12,24 @@ namespace UnitTestProject3
         [TestMethod]
         public void runDragAndDrop()
         {
-            scenarios = new GlobalSQAScenarios("https://www.globalsqa.com/demo-site/draganddrop/");
+            scenarios = new GlobalSQAScenarios("https://www.globalsqa.com/");
+            
             scenarios.RunTests("TrashDragAndDrop");
         }
+        [TestMethod]
+        public void runSelectCountry()
+        {
+            scenarios = new GlobalSQAScenarios("https://www.globalsqa.com/");
+
+            scenarios.RunTests("CountryDropDownMenu");
+        }
+        [TestMethod]
+        public void runFillSampleData()
+        {
+            scenarios = new GlobalSQAScenarios("https://www.globalsqa.com/");
+
+            scenarios.RunTests("FillSampleData");
+        }
+        
     }
 }

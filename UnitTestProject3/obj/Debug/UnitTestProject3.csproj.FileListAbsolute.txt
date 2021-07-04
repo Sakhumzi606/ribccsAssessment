@@ -1,4 +1,3 @@
-C:\Users\User\Documents\PlayingAround\ribccsAssessment\UnitTestProject3\obj\Debug\UnitTestProject3.csprojResolveAssemblyReference.cache
 C:\Users\User\Documents\PlayingAround\ribccsAssessment\UnitTestProject3\bin\Debug\UnitTestProject3.dll
 C:\Users\User\Documents\PlayingAround\ribccsAssessment\UnitTestProject3\bin\Debug\UnitTestProject3.pdb
 C:\Users\User\Documents\PlayingAround\ribccsAssessment\UnitTestProject3\bin\Debug\Newtonsoft.Json.dll
