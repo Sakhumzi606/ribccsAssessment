@@ -35,7 +35,7 @@ namespace UnitTestProject3.TestSteps
             {
                 this.fillSamplePageTest();
             }
-
+            SelDriver.ShutDown();
         }
 
         public bool dragAndDropImageInTrash()
