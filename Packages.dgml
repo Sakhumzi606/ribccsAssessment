@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="UnitTestProject3" Label="UnitTestProject3" Category="Project" />
+    <Node Id="Newtonsoft.Json 4.5.1" Label="Newtonsoft.Json 4.5.1" Category="Package" />
+    <Node Id="Selenium.Chrome.WebDriver 85.0.0" Label="Selenium.Chrome.WebDriver 85.0.0" Category="Package" />
+    <Node Id="Selenium.WebDriver 3.141.0" Label="Selenium.WebDriver 3.141.0" Category="Package" />
+    <Node Id="Selenium.WebDriver.ChromeDriver 91.0.4472.10100" Label="Selenium.WebDriver.ChromeDriver 91.0.4472.10100" Category="Package" />
+  </Nodes>
+  <Links>
+    <Link Source="Selenium.WebDriver 3.141.0" Target="Newtonsoft.Json 4.5.1" Category="Package Dependency" />
+    <Link Source="UnitTestProject3" Target="Selenium.Chrome.WebDriver 85.0.0" Category="Installed Package" />
+    <Link Source="UnitTestProject3" Target="Selenium.WebDriver 3.141.0" Category="Installed Package" />
+    <Link Source="UnitTestProject3" Target="Selenium.WebDriver.ChromeDriver 91.0.4472.10100" Category="Installed Package" />
+  </Links>
+  <Categories>
+    <Category Id="Project" />
+    <Category Id="Package" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Package Dependency" ValueLabel="True">
+      <Condition Expression="HasCategory('Package Dependency')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>
