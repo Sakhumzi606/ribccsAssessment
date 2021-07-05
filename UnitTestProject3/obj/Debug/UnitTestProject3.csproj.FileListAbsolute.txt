@@ -9,3 +9,4 @@ C:\Users\User\Documents\PlayingAround\ribccsAssessment\UnitTestProject3\bin\Debu
 C:\Users\User\Documents\PlayingAround\ribccsAssessment\UnitTestProject3\bin\Debug\WebDriver.Support.xml
 C:\Users\User\Documents\PlayingAround\ribccsAssessment\UnitTestProject3\obj\Debug\UnitTestProject3.dll
 C:\Users\User\Documents\PlayingAround\ribccsAssessment\UnitTestProject3\obj\Debug\UnitTestProject3.pdb
+C:\Users\User\Documents\PlayingAround\ribccsAssessment\UnitTestProject3\obj\Debug\UnitTestProject3.csprojResolveAssemblyReference.cache

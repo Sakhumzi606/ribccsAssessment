@@ -5,6 +5,7 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 using System.Threading;
 using System.Collections.Generic;
+using System.IO;
 
 
 namespace UnitTestProject3.TestManager
@@ -276,8 +277,15 @@ namespace UnitTestProject3.TestManager
         {
             try
             {
-                String script = "document.querySelector('" + elementCss + "').value='" + @"C:\\\Documents\\PlayingAround\\ribccsAssessment\\UnitTestProject3\\Image\\user.png" + "';";
-                ((IJavaScriptExecutor)Driver).ExecuteScript(script);
+
+                var path = Directory.GetCurrentDirectory();
+                path = path.Replace("\\bin\\Debug", "\\Image\\user.png");
+
+                IWebElement but = Driver.FindElement(By.CssSelector("input[name='file-553']"));
+                but.SendKeys(@path);
+                ClickElementByCss(elementCss);
+                
+
             }
             catch (Exception)
             {

@@ -90,8 +90,8 @@ namespace UnitTestProject3.TestSteps
             if (!SelDriver.hoverOverMenuElementAndClickSubMenuByCss(GlobalSQAStepsHelper.sampleData))
             { return false; }
             //uploadImage
-            //if (!SelDriver.UploadImageByCSS(SQAObjects.uploadImage()))
-            //{ return false; }
+            if (!SelDriver.UploadImageByCSS(SQAObjects.uploadImage()))
+            { return false; }
             //Enter name
             if (!SelDriver.enterTextByCss(SQAObjects.sampleNameCss(),"John"))
             { return false; }
