@@ -15,10 +15,6 @@ namespace UnitTestProject3.TestManager
         IWebDriver Driver = null;
         bool DriverRunning = false;
 
-        public SeleniumDriverClass()
-        {
-        }
-
         public IWebDriver startDriver(string TestUrl)
         {
             Driver = new ChromeDriver();
@@ -28,7 +24,6 @@ namespace UnitTestProject3.TestManager
             DriverRunning = true;
 
             return Driver;
-
         }
 
         public bool isDriverRunning()
@@ -289,6 +284,7 @@ namespace UnitTestProject3.TestManager
             }
             catch (Exception)
             {
+                return false;
             }
 
             return true;
